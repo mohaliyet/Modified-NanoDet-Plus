@@ -4,7 +4,7 @@ This repository is a refactored version of [RangiLyu/nanodet](https://github.com
 
 The codebase has been adapted for conformal risk control (CRC) workflows in object detection. The main implementation lives in the `nanodet/` package, while the runnable entry points are kept in `tools/`.
 
-How to use the codebase will be explained in the `notebooks` folder.
+How to use the codebase will be explained in the `notebooks/` folder.
 
 ## Contents
 

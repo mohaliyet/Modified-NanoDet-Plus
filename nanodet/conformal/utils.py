@@ -8,10 +8,6 @@ from typing import List, Dict, Optional
 from collections import defaultdict
 
 
-def _normalize_filename(filename: str) -> str:
-    return os.path.basename(filename)
-
-
 def compute_iou(box1: List[float], box2: List[float]) -> float:
     """Compute Intersection over Union (IoU) between two boxes.
 
@@ -68,10 +64,7 @@ def load_pred_gt_data(pred_file: str, gt_file: str) -> Dict[str, Dict]:
         gt_data = json.load(f)
 
     # Create mapping from image_id to file_name
-    id_to_filename = {
-        img['id']: _normalize_filename(img['file_name'])
-        for img in gt_data.get('images', [])
-    }
+    id_to_filename = {img['id']: img['file_name'] for img in gt_data.get('images', [])}
 
     # Group ground truth by file_name
     gt_by_filename = defaultdict(list)
@@ -85,7 +78,7 @@ def load_pred_gt_data(pred_file: str, gt_file: str) -> Dict[str, Dict]:
     pred_by_filename = defaultdict(list)
     for pred in predictions:
         # Assume predictions use file_name directly
-        filename = _normalize_filename(pred['file_name'])
+        filename = pred['file_name']
         pred_by_filename[filename].append({
             'confidence': pred.get('winning_score', pred.get('score', 0)),
             'bbox': pred.get('bbox_sigmoid', pred.get('bbox', [])),

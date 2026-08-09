@@ -139,7 +139,7 @@ def main(args):
             warp_matrix = batch["warp_matrix"][0]
             img_height = batch["img_info"]["height"][0]
             img_width = batch["img_info"]["width"][0]
-            file_name = batch["img_info"]["file_name"][0]
+            file_name = os.path.basename(batch["img_info"]["file_name"][0])
             
             if isinstance(img_height, torch.Tensor):
                 img_height = img_height.item()

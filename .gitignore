@@ -1,0 +1,49 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# Test and lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and runtime outputs
+*.log
+logs/
+runs/
+
+# Generated model and export artifacts
+*.pth
+*.pt
+*.onnx
+*.ckpt
+exports/
+explain_outputs_notebook/
+0p5x/
+A1/
+A11/
+
+# OS files
+.DS_Store

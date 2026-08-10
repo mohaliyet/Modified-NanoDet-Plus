@@ -11,6 +11,7 @@ How to use the codebase will be explained in the `notebooks/` folder.
 - `nanodet/` - core library code
 - `config/` - configuration files
 - `tools/` - training, inference, export, CRC, and evaluation scripts
+- `notebooks/` - templates to training the model and implement CRC
 - `LICENSE` - Apache 2.0 license
 
 ## Attribution
